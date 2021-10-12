@@ -11,6 +11,11 @@ def call() {
                     uploadTemplateS3(s3Bucket:"testbucket-abigael")
                 }
             }
+            stage('Upload all File to S3') {                  
+                steps {
+                    uploadAllFileS3()
+                }
+            }
             stage('Upload Certain File to S3') {                  
                 steps {
                     uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "Jenkinsfile")
