@@ -18,8 +18,7 @@ def call() {
             }
             stage('Upload Certain File to S3') {                  
                 steps {
-                    uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "Jenkinsfile")
-                    uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "README.md")
+                    uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "")
                 }
             }
             stage('Delete HelloWorld.txt from S3 bucket') {                  
