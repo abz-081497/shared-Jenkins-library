@@ -8,12 +8,17 @@ def call() {
         stages {
             stage('Upload template to S3') {                  
                 steps {
-                    uploadTemplateS3()
+                    uploadTemplateS3(s3Bucket:"testbucket-abigael")
                 }
             }
-            stage('Upload File to S3') {                  
+            stage('Upload Certain File to S3') {                  
                 steps {
-                    uploadFileS3()
+                    uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "CertainFileSample.txt")
+                }
+            }
+            stage('Delete HelloWorld.txt from S3 bucket') {                  
+                steps {
+                    deleteFileS3(s3Bucket: "testbucket-abigael", pathName: "HelloWorld.txt")
                 }
             }
             stage('Deploy EC2') {                  
