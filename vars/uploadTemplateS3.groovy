@@ -3,7 +3,7 @@ def call(String s3Bucket = "testbucket-abigael", Map stageParams = [:]) {
         awsIdentity()
         s3Upload( 
             includePathPattern: "${stageParams.pathFolder}",
-            bucket: "${stageParams.s3Bucket}"
+            bucket: "${s3Bucket}"
      
                       
         )
