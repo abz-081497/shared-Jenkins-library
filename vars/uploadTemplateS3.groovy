@@ -1,4 +1,4 @@
-def call(String s3Bucket = "testbucket-abigael", Map stageParams = [:]) {
+def call(Map stageParams = [:]) {
     withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Upload( 
