@@ -9,14 +9,14 @@ def call() {
         stages {
             stage('Upload template to S3') {                  
                 steps {
-                    uploadTemplateS3(s3Bucket: "${s3Bucket}")
+                    uploadTemplateS3(s3Bucket: "${s3Bucket}", pathFolder: "*.yml, src/HelloAbby.txt")
                 }
             }
-            stage('Upload all File to S3') {                  
-                steps {
-                    uploadAllFileS3(s3Bucket:"testbucket-abigael")
-                }
-            }
+//             stage('Upload all File to S3') {                  
+//                 steps {
+//                     uploadAllFileS3(s3Bucket:"testbucket-abigael")
+//                 }
+//             }
 //             stage('Upload Certain File to S3') {                  
 //                 steps {
 //                     uploadCertainFileS3(s3Bucket:"testbucket-abigael", certainFile: "HelloWorld.txt")
