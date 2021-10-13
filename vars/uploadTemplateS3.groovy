@@ -1,9 +1,10 @@
-def call(Map stageParams = [:]) {
+def call(String s3Bucket = "testbucket-abigael", Map stageParams = [:]) {
     withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Upload( 
             includePathPattern: "${stageParams.pathFolder}",
             bucket: "${stageParams.s3Bucket}"
+     
                       
         )
     }
