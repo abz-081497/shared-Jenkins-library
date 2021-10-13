@@ -3,7 +3,7 @@ def call(Map stageParams = [:]) {
         s3Upload( 
             bucket: "${stageParams.s3Bucket}",
             includePathPattern: "src/HelloJag.txt",
-            file: "${stageParams.certainFile}"
+//             file: "${stageParams.certainFile}"
         )
     }
 }
