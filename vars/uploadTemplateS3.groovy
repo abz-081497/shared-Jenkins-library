@@ -1,5 +1,5 @@
-def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-abigael"]) {
-    withAWS(region: stageParams.awsRegion, credentials:"${AWS_CRED}") {
+def call(Map stageParams = [:]) {
+    withAWS(region: "${AWS_REGION}", credentials:"${AWS_CRED}") {
         awsIdentity()
         s3Upload( 
             includePathPattern: "${stageParams.pathFolder}",
@@ -8,5 +8,6 @@ def call(Map stageParams = [awsRegion: "us-east-1", s3Bucket: "testbucket-abigae
         )
     }
 }
+//awsRegion: "us-east-1", s3Bucket: "testbucket-abigael"
 //ito yong path nong para sa pag upload ng folder
 // pathFolder: "*.yml, src/HelloAbby.txt"
