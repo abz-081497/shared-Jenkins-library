@@ -18,13 +18,13 @@ def call() {
 //             }
             stage('Upload Certain File to S3') {                  
                 steps {
-                    uploadCertainFileS3(s3Bucket:"testbucket-abigael")
+                    uploadCertainFileS3(s3Bucket:"testbucket-abigael", file: "HelloWorld.txt")
                 }
             }
             stage('Delete File from S3 bucket') {                  
                 steps {
                     deleteFileS3(s3Bucket: "testbucket-abigael", pathName: ".git/")
-                    deleteFileS3(s3Bucket: "testbucket-abigael", pathName: "HelloWorld.txt")
+//                     deleteFileS3(s3Bucket: "testbucket-abigael", pathName: "HelloWorld.txt")
                 }
             }
             stage('Deploy EC2') {                  
