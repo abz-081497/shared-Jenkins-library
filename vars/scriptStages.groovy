@@ -23,6 +23,7 @@ def call() {
             }
             stage('Delete File from S3 bucket') {                  
                 steps {
+                    deleteFileS3(s3Bucket: "testbucket-abigael", pathName: ".git/")
                     deleteFileS3(s3Bucket: "testbucket-abigael", pathName: "HelloWorld.txt")
                 }
             }
